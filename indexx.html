@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Question</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+      padding-top: 150px;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 50px;
+      text-shadow: 2px 2px 5px #ff3366;
+    }
+    .btn {
+      font-size: 24px;
+      padding: 15px 30px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .yes {
+      background: #28a745;
+      color: white;
+    }
+    .no {
+      background: #dc3545;
+      color: white;
+      position: absolute;
+    }
+    #message {
+      font-size: 40px;
+      margin-top: 50px;
+      color: yellow;
+      font-weight: bold;
+      display: none;
+      animation: fadeIn 2s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Em yêu anh không? 💘</h1>
+  <button class="btn yes" onclick="showLove()">Có 💕</button>
+  <button class="btn no" id="noBtn" onmouseover="moveNo()">Không ❌</button>
+
+  <div id="message">Anh cũng yêu em 💖</div>
+
+  <script>
+    function showLove() {
+      document.getElementById("message").style.display = "block";
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById("noBtn");
+      const x = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
+      const y = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight));
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+  </script>
+</body>
+</html>
